@@ -19,6 +19,9 @@ jobs:
           - { board: hw75_dynamic@B,    keymap: hw75_dynamic.keymap   }
 
     steps:
+      - name: Install sudo package
+        run: apt update && apt install sudo
+        
       - name: Prepare variables
         run: |
           echo "zephyr_version=${ZEPHYR_VERSION}" >> $GITHUB_ENV
