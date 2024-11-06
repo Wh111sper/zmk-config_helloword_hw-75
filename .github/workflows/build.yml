@@ -22,16 +22,6 @@ jobs:
       - name: Prepare variables
         run: |
           echo "zephyr_version=${ZEPHYR_VERSION}" >> $GITHUB_ENV
-            
-      - name: Change ownership of /github/home
-        run: sudo chown -R $(whoami) /github/home
-        
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.8.5'
-          
-      - name: Checkout
-        uses: actions/checkout@v3
 
       - name: Set up build tools
         run: |
