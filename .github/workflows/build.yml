@@ -14,9 +14,7 @@ jobs:
       matrix:
         include:
           - { board: hw75_keyboard@1.1, keymap: hw75_keyboard.keymap  }
-          - { board: hw75_keyboard@1.2, keymap: hw75_keyboard.keymap  }
           - { board: hw75_dynamic@A,    keymap: hw75_dynamic.keymap   }
-          - { board: hw75_dynamic@B,    keymap: hw75_dynamic.keymap   }
 
     steps:
       - name: Prepare variables
@@ -29,7 +27,6 @@ jobs:
           apt-get install -y python3-pip protobuf-compiler curl
           curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
           apt-get install -y nodejs
-          sudo -H pip install -U fonttools
           npm install -g lv_font_conv
 
       - name: Cache west modules
