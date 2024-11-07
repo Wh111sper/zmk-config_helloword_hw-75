@@ -19,9 +19,6 @@ jobs:
           - { board: hw75_dynamic@B,    keymap: hw75_dynamic.keymap   }
 
     steps:
-      - name: Install sudo package
-        run: apt update && apt install sudo
-        
       - name: Prepare variables
         run: |
           echo "zephyr_version=${ZEPHYR_VERSION}" >> $GITHUB_ENV
@@ -35,7 +32,7 @@ jobs:
           apt-get install -y python3-pip protobuf-compiler curl
           curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
           apt-get install -y nodejs
-          sudo -H pip install -U fonttools
+          pip install -U fonttools
           npm install -g lv_font_conv
 
       - name: Cache west modules
