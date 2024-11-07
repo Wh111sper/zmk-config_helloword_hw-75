@@ -33,6 +33,7 @@ jobs:
           curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
           apt-get install -y nodejs
           apt install -y python3-fonttools
+          apt install -y python3-venv
           npm install -g lv_font_conv
 
       - name: Cache west modules
