@@ -34,7 +34,7 @@ jobs:
           # 创建虚拟环境并设置权限
           python3 -m venv /opt/venv
           chown -R $USER:$USER /opt/venv
-          source /opt/venv/bin/activate
+          . /opt/venv/bin/activate
       
           # 在虚拟环境中安装依赖
           python3 -m pip install --upgrade pip
