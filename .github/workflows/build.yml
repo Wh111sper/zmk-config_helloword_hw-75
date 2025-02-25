@@ -61,11 +61,13 @@ jobs:
           chmod +x .venv/bin/activate
           . .venv/bin/activate
           pip install  -r zephyr/scripts/requirements.txt
-          # git config --global --add safe.directory $PWD
+          git config --global --add safe.directory $PWD
 
       - name: West build
         run: |
-          west build -p -s zmk/app -b hw75_keyboard@1.1 -- -DZMK_CONFIG=$PWD/config -DKEYMAP_FILE=$PWD/config/hw75_keyboard.keymap
+          west build -s zmk/app -b ${{ matrix.board }} -- \
+            -DZMK_CONFIG=${GITHUB_WORKSPACE}/config \
+            -DKEYMAP_FILE=${GITHUB_WORKSPACE}/config/${{ matrix.keymap }}
         env:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
 
