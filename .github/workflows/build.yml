@@ -63,11 +63,7 @@ jobs:
           . .venv/bin/activate
           pip install  -r zephyr/scripts/requirements.txt
           git config --global --add safe.directory $PWD
-
-      - name: Build
-        run: |
-          cmake --build /__w/zmk-config_helloword_hw-75/zmk-config_helloword_hw-75/build --verbose
-
+          
       - name: West build
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- \
