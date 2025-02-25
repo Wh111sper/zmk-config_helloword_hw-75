@@ -41,7 +41,7 @@ jobs:
           python3 -m pip install fonttools
       
           # 安装 Node.js
-          curl -fsSL https://deb.nodesource.com/setup_18.x | -E bash -
+          curl -fsSL https://deb.nodesource.com/setup_18.x |  bash -
           apt-get install -y nodejs
       
           # 安装 lv_font_conv (使用--unsafe-perm避免权限问题)
