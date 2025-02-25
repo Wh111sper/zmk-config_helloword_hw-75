@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: zmkfirmware/zmk-build-arm:stable
+      image: zmkfirmware/zmk-build-arm:latest
 
     strategy:
       matrix:
@@ -35,6 +35,7 @@ jobs:
           apt install -y python3-fonttools
           apt install -y python3-venv
           npm install -g lv_font_conv
+          apt-get install -y ninja-build
 
       - name: Cache west modules
         uses: actions/cache@v3.0.11
@@ -62,6 +63,10 @@ jobs:
           . .venv/bin/activate
           pip install  -r zephyr/scripts/requirements.txt
           git config --global --add safe.directory $PWD
+          
+      - name: Build
+        run: |
+          cmake --build /__w/zmk-config_helloword_hw-75/zmk-config_helloword_hw-75/build --verbose
 
       - name: West build
         run: |
