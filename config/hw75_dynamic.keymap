@@ -46,6 +46,14 @@
 	keymap {
 		compatible = "zmk,keymap-ext", "zmk,keymap";
 
+		tasks {
+			label = "窗口";
+			icon = [EF 85 9E];
+			bindings = <&trans &trans>;
+			sensor-bindings = <&switch_tasks>;
+			profile = <&profile_spring>;
+		};
+
 		volume {
 			label = "音量";
 			icon = [EF 86 AE];
@@ -60,26 +68,23 @@
 			sensor-bindings = <&inc_dec_mw MW_DN(1) MW_UP(1)>;
 		};
 
-		tasks {
-			label = "窗口";
-			icon = [EF 85 9E];
-			bindings = <&trans &trans>;
-			sensor-bindings = <&switch_tasks>;
-			profile = <&profile_spring>;
-		};
+		
 
-		arrow_vertical {
-			label = "上下";
-			icon = [EF 86 93];
-			bindings = <&trans &trans>;
-			sensor-bindings = <&inc_dec_kp UP DOWN>;
-		};
+		/*
+		* arrow_vertical {
+		* 	label = "上下";
+		* 	icon = [EF 86 93];
+		* 	bindings = <&trans &trans>;
+		* 	sensor-bindings = <&inc_dec_kp UP DOWN>;
+		*  };
 
-		arrow_horizontal {
-			label = "左右";
-			icon = [EF 86 9C];
-			bindings = <&trans &trans>;
-			sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
-		};
+
+		* arrow_horizontal {
+		* 	label = "左右";
+		* 	icon = [EF 86 9C];
+		* 	bindings = <&trans &trans>;
+		* 	sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+		*  };
+		*/
 	};
 };
