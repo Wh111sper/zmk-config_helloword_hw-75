@@ -28,12 +28,12 @@ jobs:
 
       - name: Set up build tools
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip python3-venv python3-setuptools python3-wheel python3-full ninja-build protobuf-compiler
+          apt-get update
+          apt-get install -y python3-pip python3-venv python3-setuptools python3-wheel python3-full ninja-build protobuf-compiler
     
           # 创建虚拟环境并设置权限
-          sudo python3 -m venv /opt/venv
-          sudo chown -R $USER:$USER /opt/venv
+          python3 -m venv /opt/venv
+          chown -R $USER:$USER /opt/venv
           source /opt/venv/bin/activate
       
           # 在虚拟环境中安装依赖
@@ -41,14 +41,14 @@ jobs:
           python3 -m pip install fonttools
       
           # 安装 Node.js
-          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-          sudo apt-get install -y nodejs
+          curl -fsSL https://deb.nodesource.com/setup_18.x | -E bash -
+          apt-get install -y nodejs
       
           # 安装 lv_font_conv (使用--unsafe-perm避免权限问题)
-          sudo npm install -g lv_font_conv --unsafe-perm=true
+          npm install -g lv_font_conv --unsafe-perm=true
       
           # 确保 pyftsubset 可用
-          sudo ln -sf /opt/venv/bin/pyftsubset /usr/local/bin/pyftsubset
+          ln -sf /opt/venv/bin/pyftsubset /usr/local/bin/pyftsubset
 
       - name: Cache west modules
         uses: actions/cache@v3.0.11
