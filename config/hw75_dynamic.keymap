@@ -17,7 +17,7 @@
 			label = "TAKS_FORWARD";
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
-			bindings = <&macro_tap     &&kp RC(LEFT)>;
+			bindings = <&macro_tap     &kp RC(LEFT)>;
 		};
 
 		tasks_backward: tasks-backward {
