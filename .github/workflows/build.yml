@@ -37,6 +37,8 @@ jobs:
           npm install -g lv_font_conv
           apt-get install -y ninja-build
           pip3 install fonttools
+          ln -s /usr/local/bin/pyftsubset /usr/bin/pyftsubset  # 添加这行来创建符号链接
+
 
       - name: Cache west modules
         uses: actions/cache@v3.0.11
