@@ -29,6 +29,9 @@ jobs:
       - name: Set up build tools
         run: |
           apt-get update
+          apt-get install -y nodejs python3-venv
+          python3 -m venv venv
+          . venv/bin/activate
           apt-get install -y python3-pip protobuf-compiler curl
           curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
           apt-get install -y nodejs
@@ -53,6 +56,7 @@ jobs:
 
       - name: Prepare west
         run: |
+          . venv/bin/activate
           west init -l config
           west update
           west zephyr-export
@@ -61,6 +65,7 @@ jobs:
 
       - name: West build
         run: |
+          . venv/bin/activate
           west build -s zmk/app -b ${{ matrix.board }} -- \
             -DZMK_CONFIG=${GITHUB_WORKSPACE}/config \
             -DKEYMAP_FILE=${GITHUB_WORKSPACE}/config/${{ matrix.keymap }}
