@@ -36,6 +36,7 @@ jobs:
           curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
           apt-get install -y nodejs
           pip install -U fonttools
+          pip install protobuf==3.20.1  # 指定 protobuf 版本
           npm install -g lv_font_conv
 
       - name: Cache west modules
