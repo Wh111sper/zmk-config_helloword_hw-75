@@ -88,7 +88,7 @@ jobs:
       - name: Archive
         uses: actions/upload-artifact@v4
         with:
-          name: firmware
+          name: firmware-${{ matrix.board }}
           path: build/artifacts
 
   release:
