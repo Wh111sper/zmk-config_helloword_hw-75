@@ -43,7 +43,7 @@
 		tasks {
 			label = "窗口";
 			icon = [EF 85 9E];
-			bindings = <&trans &trans>;
+			bindings = <&lvkp LV_KEY_PREV &lvkp LV_KEY_NEXT>;
 			sensor-bindings = <&switch_tasks>;
 			profile = <&profile_spring>;
 		};
@@ -51,7 +51,7 @@
 		volume {
 			label = "音量";
 			icon = [EF 86 AE];
-			bindings = <&lvkp LV_KEY_PREV &lvkp LV_KEY_NEXT>;
+			bindings = <&trans &trans>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 
