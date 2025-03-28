@@ -55,13 +55,13 @@
         touch {
             label = "Touch";
             bindings = <
-&trans          &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans              &trans  &trans          &trans  &trans
-&trans          &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans                                    &trans                  &trans              &trans  &trans  &trans  &trans  &trans
-                                &kp RC(UP_ARROW)  &none   &none   &none   &none   &kp RC(DOWN_ARROW)
+&trans          &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans         &trans  &trans          &trans  &trans
+&trans          &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans                                &trans                  &trans         &trans  &trans  &trans  &trans  &trans
+                                &kp RC(LEFT)  &none   &none   &none   &none   &kp RC(RIGHT)
             >;
         };
     };
